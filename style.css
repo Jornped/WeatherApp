@@ -1,43 +1,51 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: "Ariel", sans-serif;
+    font-family: "Arial", sans-serif;
     box-sizing: border-box;
 }
 
 body {
     background: #222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
 }
 
 .card {
-    width: 90%;
+    width: 100%;
     max-width: 470px;
     background: linear-gradient(135deg, #00feba, #5b548a);
     color: #fff;
-    margin: 100px auto 0;
     border-radius: 20px;
-    padding: 40px 35px;
+    padding: 40px 20px;
     text-align: center;
 }
 
+/* Поле ввода и кнопка */
 .search {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 10px;
+    /* Расстояние между элементами */
+    flex-wrap: wrap;
+    /* Чтобы адаптироваться на узких экранах */
 }
 
 .search input {
+    flex: 1;
     border: 0;
     outline: 0;
     background: #ebfffc;
     color: #555;
-    padding: 10px 25px;
-    height: 60px;
+    padding: 10px 20px;
+    height: 50px;
     border-radius: 30px;
-    flex: 1;
-    margin-right: 16px;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .search button {
@@ -45,52 +53,87 @@ body {
     outline: 0;
     background: #ebfffc;
     border-radius: 50%;
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .search button img {
     width: 16px;
 }
 
+/* Иконка погоды */
 .weather-icon {
-    width: 170px;
-    margin-top: 30px;
+    width: 150px;
+    margin-top: 20px;
 }
 
+/* Температура и город */
 .weather h1 {
-    font-size: 80px;
+    font-size: 60px;
     font-weight: 500;
 }
 
 .weather h2 {
-    font-size: 45px;
+    font-size: 35px;
     font-weight: 400;
-    margin-top: -10px;
+    margin-top: -5px;
 }
 
+/* Блок с деталями */
 .details {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 20px;
-    margin-top: 50px;
+    padding: 0 10px;
+    margin-top: 40px;
+    flex-wrap: wrap;
 }
 
 .col {
     display: flex;
     align-items: center;
     text-align: left;
+    flex: 1;
+    justify-content: center;
+    min-width: 120px;
+    /* Чтобы не съезжало на узких экранах */
 }
 
 .col img {
-    width: 40px;
-    margin-right: 10px;
+    width: 30px;
+    margin-right: 5px;
 }
 
 .humidity,
 .wind {
-    font-size: 28px;
-    margin-top: -6px;
+    font-size: 24px;
+    margin-top: -4px;
+}
+
+/* Медиа-запрос для экранов меньше 400px */
+@media (max-width: 400px) {
+    .weather h1 {
+        font-size: 50px;
+    }
+
+    .weather h2 {
+        font-size: 30px;
+    }
+
+    .weather-icon {
+        width: 120px;
+    }
+
+    .details {
+        margin-top: 30px;
+    }
+
+    .humidity,
+    .wind {
+        font-size: 20px;
+    }
 }

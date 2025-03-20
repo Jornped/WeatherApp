@@ -1,4 +1,4 @@
-const apiKey = "";  // It's free but still don't want to share it 
+const apiKey = "20c6b7a19100ea835268d76261d2c9f4";
 
 const searchButton = document.querySelector("#search-button");
 const searchInput = document.querySelector("#search-input");
